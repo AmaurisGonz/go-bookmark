@@ -1,5 +1,3 @@
-Here's a README that keeps the examples minimal and instead points users to your `rest_api_commands` document for the complete list.
-
 # Bookmark REST API
 
 A simple RESTful API written in Go for managing bookmarks. The application stores bookmarks in memory and persists them to a JSON file so data is retained between server restarts.
