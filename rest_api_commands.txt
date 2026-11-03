@@ -1,0 +1,148 @@
+START THE SERVER
+
+go run .
+
+HEALTH CHECK
+
+curl http://localhost:8080/healthz
+
+POST EXAMPLES
+
+curl -X POST http://localhost:8080/bookmarks \
+-H "Content-Type: application/json" \
+-d '{
+"url":"https://golang.org",
+"title":"Go",
+"description":"Official Go website",
+"tags":["go","programming"]
+}'
+
+curl -X POST http://localhost:8080/bookmarks \
+-H "Content-Type: application/json" \
+-d '{
+"url":"https://github.com",
+"title":"GitHub",
+"description":"Code hosting",
+"tags":["git"]
+}'
+
+curl -X POST http://localhost:8080/bookmarks \
+-H "Content-Type: application/json" \
+-d '{
+"url":"https://stackoverflow.com",
+"title":"Stack Overflow",
+"description":"Programming Q&A",
+"tags":["coding"]
+}'
+
+curl -X POST http://localhost:8080/bookmarks \
+-H "Content-Type: application/json" \
+-d '{
+"url":"https://openai.com",
+"title":"OpenAI",
+"description":"AI",
+"tags":["ai"]
+}'
+
+curl -X POST http://localhost:8080/bookmarks \
+-H "Content-Type: application/json" \
+-d '{
+"url":"https://news.ycombinator.com",
+"title":"Hacker News",
+"description":"Tech News",
+"tags":["news"]
+}'
+
+curl -X POST http://localhost:8080/bookmarks \
+-H "Content-Type: application/json" \
+-d '{
+"url":"https://reddit.com",
+"title":"Reddit",
+"description":"Communities",
+"tags":["social"]
+}'
+
+curl -X POST http://localhost:8080/bookmarks \
+-H "Content-Type: application/json" \
+-d '{
+"url":"https://youtube.com",
+"title":"YouTube",
+"description":"Videos",
+"tags":["video"]
+}'
+
+curl -X POST http://localhost:8080/bookmarks \
+-H "Content-Type: application/json" \
+-d '{
+"url":"https://example.com",
+"title":"Example",
+"description":"Sample",
+"tags":["example"]
+}'
+
+curl -X POST http://localhost:8080/bookmarks \
+-H "Content-Type: application/json" \
+-d '{
+"url":"https://developer.mozilla.org",
+"title":"MDN",
+"description":"Documentation",
+"tags":["docs"]
+}'
+
+curl -X POST http://localhost:8080/bookmarks \
+-H "Content-Type: application/json" \
+-d '{
+"url":"https://go.dev",
+"title":"Go Dev",
+"description":"Go Documentation",
+"tags":["golang","docs"]
+}'
+
+GET EXAMPLES
+
+curl http://localhost:8080/bookmarks
+curl http://localhost:8080/bookmarks/1
+curl "http://localhost:8080/bookmarks?tag=go"
+curl "http://localhost:8080/bookmarks?q=github"
+curl "http://localhost:8080/bookmarks?tag=docs&q=m"
+
+PUT/PATCH EXAMPLES
+
+curl -X PUT http://localhost:8080/bookmarks/1 \
+-H "Content-Type: application/json" \
+-d '{
+"title":"Updated Title"
+}'
+
+curl -X PUT http://localhost:8080/bookmarks/2 \
+-H "Content-Type: application/json" \
+-d '{
+"description":"Updated Description"
+}'
+
+curl -X PATCH http://localhost:8080/bookmarks/1 \
+-H "Content-Type: application/json" \
+-d '{
+"tags":["go","backend"]
+}'
+
+curl -X PATCH http://localhost:8080/bookmarks/2 \
+-H "Content-Type: application/json" \
+-d '{
+"url":"https://go.dev"
+}'
+
+curl -X PATCH http://localhost:8080/bookmarks/3 \
+-H "Content-Type: application/json" \
+-d '{
+"title":"New Name",
+"description":"Updated"
+}'
+
+DELETE EXAMPLES
+
+curl -X DELETE http://localhost:8080/bookmarks/1
+curl -X DELETE http://localhost:8080/bookmarks/2
+curl -X DELETE http://localhost:8080/bookmarks/4
+curl -X DELETE http://localhost:8080/bookmarks/7
+curl -X DELETE http://localhost:8080/bookmarks/3
